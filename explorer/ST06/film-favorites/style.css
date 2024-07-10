@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --hue: 200;
+  --bg-color: hsl(var(--hue), 50%, 15%);
+  --ff-primary: "Roboto", sans-serif;
+  --btn-plus: hsla(var(--hue), 100%, 100%, 0.2);
+  --btn-plus-hover: hsla(var(--hue), 100%, 100%, 0.4);
+  --btn-remove: hsl(var(--hue), 100%, 15%);
+  --btn-remove-hover: hsl(0, 0%, 100%);
+  --transition: 0.2s ease;
+  --shadow: hsl(0, 0%, 0%, 0.3);
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--ff-primary);
+  background: var(--bg-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  padding: 0 0 2.4rem;
+}
+
+.search {
+  width: max-content;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  margin: 3.2rem auto;
+}
+
+#input-search {
+  height: 100%;
+  padding: 1rem;
+  border: none;
+}
+
+#input-search:focus-within {
+  outline: 2px solid var(--btn-plus-hover);
+}
+
+.btn-add {
+  width: 4rem;
+  height: 100%;
+  border-radius: 0 0.2rem 0.2rem 0;
+  font-size: 2rem;
+  color: var(--bg-color);
+  background: var(--btn-plus);
+  transition: var(--transition);
+}
+
+button.btn-add:hover {
+  background: var(--btn-plus-hover);
+}
+
+.movies {
+  width: 100%;
+  padding: 2.4rem 0;
+  display: flex;
+  gap: 2.4rem;
+  margin: auto;
+  list-style: none;
+  overflow-x: scroll;
+}
+
+.movies::-webkit-scrollbar {
+  display: none;
+}
+
+.movie {
+  position: relative;
+  height: 46rem;
+  box-shadow: 0 2px 10px -1px var(--shadow);
+  transition: 0.2s ease;
+}
+
+.movie:hover {
+  transform: scale(1.025);
+  box-shadow: 0 2px 20px -1px var(--shadow);
+}
+
+.movie img {
+  width: 30rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+button.btn-remove {
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  font-size: 2.4rem;
+  color: var(--btn-remove);
+  background: transparent;
+  transition: var(--transition);
+}
+
+button.btn-remove:hover {
+  color: var(--btn-remove-hover);
+  background: var(--bg-color);
+}
+
+@media (max-width: 1024px) {
+  .movies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+
+  .movie {
+    height: 36rem;
+    margin: auto;
+  }
+
+  .movie img {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .movie {
+    height: 32rem;
+  }
+
+  .movie img {
+    width: 23rem;
+  }
+}

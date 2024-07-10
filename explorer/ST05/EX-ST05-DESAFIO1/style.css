@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --white: #fff;
+  --bg-btn: #ff9500;
+}
+
+div.hide {
+  display: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 2.4rem;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(45deg, #190361 0%, #b0f 100%);
+  animation: gradient 5s ease infinite;
+  background-size: 200% 200%;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+main {
+  width: min(42rem, 90%);
+  margin-top: -8rem;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background: var(--white);
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.8);
+}
+
+/*screen1*/
+.screen1 h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.screen1 p {
+  margin-bottom: 2.4rem;
+}
+
+.screen1 img:hover {
+  animation: shake 0.5s infinite;
+}
+
+/*screen2*/
+.screen2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.screen2 h1 {
+  font-size: 2.4rem;
+}
+
+.screen2 p {
+  padding: 1.2rem;
+  font-size: 2.4rem;
+  font-family: "Dancing Script", cursive;
+  background: #e4edf1;
+  box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.5);
+}
+
+.screen2 img {
+  margin: 4.2rem 0;
+}
+
+.screen2 button {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--bg-btn);
+  transition: 0.3s;
+}
+
+.screen2 button:hover {
+  padding: 1.6rem 2.4rem;
+  background: #ffb752;
+}
+
+#message {
+  animation: scaleUpMessage 1s ease;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes scaleUpMessage {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
